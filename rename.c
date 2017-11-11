@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
   FILE *fp;
   char fName[20];
   FILE *temp;
-  char ext[4]=".txt";
+  char ext[9]="_plot.txt";
   int i;
   char c;
 
@@ -35,7 +35,8 @@ int main(int argc, char *argv[])
   fName[i]='\0';
   printf("\n%s\n", fName);
 
-  strcat(fName, ext);
+  sprintf(fName,"%s%s", fName, ext);
+  printf("\n%s\n", fName);
   fp = fopen(fName, "w");
 
   for(i=0; i<10; i++){
